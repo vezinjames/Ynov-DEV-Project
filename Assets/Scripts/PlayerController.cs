@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public bool isJumping = false;
+    public int checkpointsPassed;
+    public Collider2D col;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        checkpointsPassed = 0;
     }
 
     // Update is called once per frame
@@ -104,6 +106,14 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("checkpoint"))
+        {
+            checkpointsPassed++;
         }
     }
 }
