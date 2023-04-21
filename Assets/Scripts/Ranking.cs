@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ranking : MonoBehaviour
-{ 
+{
 
-    private 
+    public int checkPointID;
 
     // Start is called before the first frame update
     void Start()
